@@ -2,9 +2,9 @@
 A product page for an e-commerce website.<br>
 This project includes:<br>
   - Product Images<br>
-  - Product Descriptions<br>
-  - Product Prices<br>
-  - Shopping Cart Functionality (Add to Cart, View Cart,Remove from cart)<br>
+  - Product Descriptions<br>
+  - Product Prices<br>
+  - Shopping Cart Functionality (Add to Cart, View Cart,Remove from cart)<br>
 <br>
 Languages used: HTML,CSS,Javascript<br>
 Also used: JSON, Bootstrap<br>
