@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>decor</title>
+  <link rel="stylesheet" href="tourcss.css">
+</head>
+<body>
+    <div class="places-text">
+      <section class="nav-bar">
+        <div class="logo">S<span>hopping is fun</span></div>
+        <ul class="menu">
+            <li class="login"><button  onclick = "window.location.href='cart.html'">CART</button> </li>                                                                                   
+        </ul>
+    </section>
+    </div>
+    <div class="card_main">
+    <div class="card">
+        <div class="card-image">
+          <img src="https://m.media-amazon.com/images/I/61cvpKv9PxL._SL1500_.jpg" alt="Image">
+        </div>
+        <div class="card-content">
+          <h2><b>Metal Flower Vase</b></h2>
+          <div class="rating">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+          <br><p class="location" ><button onclick="addToCart('Metal Flower Vase',8000,'Delhi','https://m.media-amazon.com/images/I/61cvpKv9PxL._SL1500_.jpg')"><i class="bi bi-cart"></i>Add to cart</button> </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img src="https://m.media-amazon.com/images/I/61Z89t+bBRL._SL1024_.jpg" alt="Image">
+        </div>
+        <div class="card-content">
+          <h2><b> Buddha Statue </b></h2>
+          <div class="rating">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+          <br><p class="location" ><button onclick="addToCart('Buddha Statue',7000,'Delhi','https://m.media-amazon.com/images/I/61Z89t+bBRL._SL1024_.jpg')"><i class="bi bi-cart"></i>Add to cart</button> </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img src="https://m.media-amazon.com/images/I/61khL+YxerL._SL1000_.jpg" alt="Image">
+        </div>
+        <div class="card-content">
+          <h2><b>Ceramic Donut Vase Set of 2</b></h2>
+          <div class="rating">&#11088;&#11088;&#11088;&#11088;&#11088;</div>          
+          <br><p class="location" ><button onclick="addToCart('Ceramic Donut Vase Set of 2',7000,'Delhi','https://m.media-amazon.com/images/I/61khL+YxerL._SL1000_.jpg')"><i class="bi bi-cart"></i>Add to cart </button> </p>
+        </div>
+      </div>
+    </div>
+</body>
+
+<script>
+  function addToCart(productName, price, acc, image) {
+    console.log(productName, price, acc, image);
+    var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    var isItemInCart = cartItems.some(function(item) {
+      return item.name === productName;
+    });
+
+    if (isItemInCart) {
+      alert('This item is already in your cart!');
+      return;
+    }
+
+    cartItems.push({ name: productName, price: price, acc: acc, image: image });
+    //console.log(cartItems)
+    
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+    alert('Item added to cart successfully!');
+  }
+</script>
+</html>

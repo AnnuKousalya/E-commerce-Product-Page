@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Electronics</title>
+  <link rel="stylesheet" href="tourcss.css">
+</head>
+<body>
+    <div class="places-text">
+      <section class="nav-bar">
+        <div class="logo">S<span>hopping is fun</span></div>
+        <ul class="menu">
+            <li class="login"><button  onclick = "window.location.href='cart.html'">CART</button> </li>                                                                                   
+        </ul>
+      
+    </section>
+    </div>
+    <div class="card_main">
+    <div class="card">
+        <div class="card-image">
+          <img src="https://m.media-amazon.com/images/I/61ZHYdrfSOL._SL1500_.jpg" alt="Image">
+        </div>
+        <div class="card-content">
+          <h2><b>beatXP Marv Neo 1.85”</b></h2>
+          <div class="rating">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+          <br><p class="location" ><button onclick="addToCart('beatXP Marv Neo 1.85”',1000,'Hyderabad','https://m.media-amazon.com/images/I/61ZHYdrfSOL._SL1500_.jpg')"><i class="bi bi-cart"></i>Add to cart</button> </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img src="https://m.media-amazon.com/images/I/516qCPpFXkL._SL1280_.jpg" alt="Image">
+        </div>
+        <div class="card-content">
+          <h2><b> Acer Nitro V Gaming Laptop 13th Gen Intel Core </b></h2>
+          <div class="rating">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+          <br><p class="location" ><button onclick="addToCart('Acer Nitro V Gaming Laptop 13th Gen Intel Core',900,'Vizag','https://m.media-amazon.com/images/I/516qCPpFXkL._SL1280_.jpg')"><i class="bi bi-cart"></i>Add to cart</button> </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-image">
+          <img src="https://m.media-amazon.com/images/I/517Rd6DfZRL._SL1080_.jpg" alt="Image">
+        </div>
+        <div class="card-content">
+          <h2><b>Lenovo Tab P11</b></h2>
+          <div class="rating">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+          <br><p class="location" ><button onclick="addToCart('Lenovo Tab P11',3000,'S hotel','https://m.media-amazon.com/images/I/517Rd6DfZRL._SL1080_.jpg')"><i class="bi bi-cart"></i>Add to cart</button> </p>
+        </div>
+      </div>
+     
+    </div>
+</body>
+<script>
+  function addToCart(productName, price, acc, image) {
+    console.log(productName, price, acc, image);
+    var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    var isItemInCart = cartItems.some(function(item) {
+      return item.name === productName;
+    });
+
+    if (isItemInCart) {
+      alert('This item is already in your cart!');
+      return;
+    }
+
+    cartItems.push({ name: productName, price: price, acc: acc, image: image });
+    //console.log(cartItems)
+    
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+    alert('Item added to cart successfully!');
+  }
+</script>
+</html>
